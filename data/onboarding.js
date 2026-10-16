@@ -4,6 +4,7 @@
 export const onboardingSteps = [
   {
     id: "semester",
+    summaryLabel: "Semester",
     question: "Bhai, kaunsa semester kheench raha hai?",
     idle: { text: "Sach bol, yahan koi topper nahi hai." },
     options: [
@@ -53,6 +54,7 @@ export const onboardingSteps = [
   },
   {
     id: "state",
+    summaryLabel: "State",
     question: "Kis state se ho?",
     idle: { text: "Apna state, apni gang." },
     options: [
@@ -68,6 +70,7 @@ export const onboardingSteps = [
   },
   {
     id: "backlog",
+    summaryLabel: "Backlog",
     question: "Kitne backlog ke saath chal raha hai, ladle?",
     idle: { text: "Judge nahi karenge. Bas gin ke bata." },
     options: [
@@ -103,6 +106,7 @@ export const onboardingSteps = [
   },
   {
     id: "humour",
+    summaryLabel: "Humour",
     question: "Website ka humour kaisa chahiye?",
     idle: { text: "Last sawaal, bas." },
     options: [
@@ -110,5 +114,13 @@ export const onboardingSteps = [
       { value: "brainrot", label: "Gen-Z brainrot", roast: "Samajh gaya, tu internet pe zyada rehta hai." },
       { value: "wholesome", label: "Funny aur wholesome", roast: "Sweet bacha." },
     ],
+  },
+  {
+    id: "name",
+    type: "text",
+    summaryLabel: "Naam",
+    question: "Gang mein tujhe kis naam se bulayein?",
+    idle: { text: "Asli naam ya nickname. Phone number nahi chahiye." },
+    placeholder: "Jaise: Rohit",
   },
 ];
