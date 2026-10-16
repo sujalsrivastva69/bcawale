@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const stats = [
@@ -61,61 +62,26 @@ export default function Hero() {
           </dl>
         </div>
 
-        {/* Right: floating match card */}
-        <div className="relative mx-auto w-full max-w-sm">
-          <div className="animate-float">
-            <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.12] to-white/[0.03] p-6 shadow-2xl backdrop-blur-xl">
-              <div className="flex items-center gap-4">
-                <div className="grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-[#f5b301] to-red-500 text-xl font-bold text-black">
-                  R
-                </div>
-                <div>
-                  <p className="font-semibold">Rohit</p>
-                  <p className="text-sm text-white/50">
-                    3rd Sem • Uttar Pradesh
-                  </p>
-                </div>
-                <span className="ml-auto rounded-full bg-emerald-400/15 px-3 py-1 text-xs font-bold text-emerald-300">
-                  92% match
-                </span>
-              </div>
-
-              <div className="mt-5 flex flex-wrap gap-2">
-                {["2-3 backlogs 💀", "DSA survivor", "Night owl 🦉"].map((t) => (
-                  <span
-                    key={t}
-                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-
-              <div className="mt-5 h-2 overflow-hidden rounded-full bg-white/10">
-                <div className="h-full w-[92%] rounded-full bg-gradient-to-r from-[#f5b301] to-red-500" />
-              </div>
-              <p className="mt-2 text-xs text-white/40">
-                Same semester • Same backlog range • Same state
-              </p>
-
-              <div className="mt-6 grid grid-cols-2 gap-3">
-                <button className="rounded-xl border border-white/15 py-3 text-sm font-semibold text-white/70">
-                  Skip
-                </button>
-                <button className="rounded-xl bg-[#f5b301] py-3 text-sm font-bold text-black">
-                  Say Hi 👋
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="absolute -bottom-6 -left-6 rounded-2xl border border-white/10 bg-neutral-900/90 px-4 py-3 text-sm shadow-xl backdrop-blur">
-            <span className="mr-2">🔥</span>
-            Match request accepted
-          </div>
-          <div className="absolute -right-4 -top-5 rounded-2xl border border-white/10 bg-neutral-900/90 px-4 py-3 text-sm shadow-xl backdrop-blur">
-            <span className="mr-2">📚</span>
-            New assignment added
+        {/* Right: community photo */}
+        <div className="fade-up relative mx-auto w-full max-w-xl">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -inset-6 rounded-[2.5rem] bg-[#f5b301]/15 blur-3xl"
+          />
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
+            <Image
+              src="/images/bcawale-gang.jpg"
+              alt="BCA students ka ek group park me saath baithe hue, camera ki taraf dekhte hue"
+              width={982}
+              height={940}
+              priority
+              sizes="(min-width: 1024px) 560px, (min-width: 640px) 576px, 100vw"
+              className="h-auto w-full"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-black/50 to-transparent"
+            />
           </div>
         </div>
       </div>
