@@ -1,0 +1,11 @@
+[
+  {
+    "state": "EXAMPLE STATE",
+    "regionalCentre": "EXAMPLE REGIONAL CENTRE",
+    "name": "EXAMPLE STUDY CENTRE NAME",
+    "code": "00000",
+    "city": "EXAMPLE CITY",
+    "supportsBCA": true,
+    "verified": false
+  }
+]
