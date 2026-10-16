@@ -21,6 +21,8 @@ npm install
 npm run dev
 ```
 
+GIF reactions in onboarding need a Giphy key: copy `.env.example` to `.env.local` and fill `GIPHY_API_KEY`. Bina key ke text-only reaction dikhta hai.
+
 Checks:
 
 ```bash

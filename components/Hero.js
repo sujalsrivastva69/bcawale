@@ -19,7 +19,7 @@ export default function Hero() {
         <div className="fade-up">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
             <span className="h-2 w-2 rounded-full bg-[#f5b301]" />
-            Batch of Survivors
+            Gang of BCA-pur
           </span>
 
           <h1 className="font-display mt-7 text-6xl leading-[0.95] sm:text-7xl lg:text-8xl">
@@ -31,8 +31,8 @@ export default function Hero() {
 
           <p className="mt-7 max-w-lg text-lg leading-relaxed text-white/60">
             IGNOU BCA students ka apna internet gang. Same semester, same
-            backlogs, same struggle, toh dosti pakki. Assignments, notes aur
-            deadlines bhi ek hi jagah.
+            backlogs, same struggle, toh dosti pakki. Ye jagah backbenchers
+            aur average bando ke liye hai. Toppers ke liye alag duniya hai.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">

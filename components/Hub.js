@@ -66,8 +66,8 @@ export default function Hub() {
             <ul className="mt-6 divide-y divide-white/10">
               {rows.map((r) => (
                 <li key={r.title} className="flex items-center gap-4 py-4">
-                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white/10 text-xl">
-                    📄
+                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white/10 text-xs font-bold tracking-wider text-white/70">
+                    PDF
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="truncate font-semibold">{r.title}</p>

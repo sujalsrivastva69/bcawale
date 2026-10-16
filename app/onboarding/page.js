@@ -8,9 +8,27 @@ export default function Onboarding() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState({});
   const [reaction, setReaction] = useState(null);
+  const [gifUrl, setGifUrl] = useState(null);
   const timer = useRef(null);
 
   useEffect(() => () => clearTimeout(timer.current), []);
+
+  useEffect(() => {
+    setGifUrl(null);
+    if (!reaction?.gif) return;
+    const controller = new AbortController();
+    fetch(`/api/gif?q=${encodeURIComponent(reaction.gif)}`, {
+      signal: controller.signal,
+    })
+      .then((r) => r.json())
+      .then(({ urls }) => {
+        if (urls?.length) {
+          setGifUrl(urls[Math.floor(Math.random() * urls.length)]);
+        }
+      })
+      .catch(() => {});
+    return () => controller.abort();
+  }, [reaction]);
 
   const total = onboardingSteps.length;
   const done = step >= total;
@@ -32,7 +50,7 @@ export default function Onboarding() {
   }
 
   const panel = reaction
-    ? { emoji: reaction.emoji, text: reaction.roast, gif: reaction.gif }
+    ? { text: reaction.roast, gif: gifUrl }
     : current?.idle;
 
   return (
@@ -89,7 +107,6 @@ export default function Onboarding() {
                       reaction && !selected ? "opacity-40" : ""
                     }`}
                   >
-                    <span className="text-2xl">{opt.emoji}</span>
                     <span>
                       <span className="block font-semibold">{opt.label}</span>
                       {opt.sub && (
@@ -111,11 +128,13 @@ export default function Onboarding() {
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={panel.gif}
-                    alt="reaction"
+                    alt=""
                     className="h-56 w-56 rounded-2xl object-cover"
                   />
                 ) : (
-                  <span className="text-8xl">{panel.emoji}</span>
+                  <span className="font-display text-7xl tracking-wider text-white/15">
+                    BCAWALE
+                  </span>
                 )}
                 <p className="font-display mt-6 text-3xl leading-tight">
                   {panel.text}
@@ -131,7 +150,6 @@ export default function Onboarding() {
         </div>
       ) : (
         <div className="relative mx-auto max-w-2xl px-5 py-20 text-center sm:px-8">
-          <span className="pop text-7xl">🎬</span>
           <h1 className="font-display mt-6 text-6xl leading-none">
             PROFILE READY,
             <br />
@@ -146,7 +164,7 @@ export default function Onboarding() {
               >
                 <span className="text-white/50">{s.question}</span>
                 <span className="font-semibold">
-                  {answers[s.id]?.emoji} {answers[s.id]?.label}
+                  {answers[s.id]?.label}
                 </span>
               </li>
             ))}

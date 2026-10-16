@@ -13,7 +13,7 @@ const body = Inter({
 });
 
 export const metadata = {
-  title: "BCAWale | Batch of Survivors",
+  title: "BCAWale | Gang of BCA-pur",
   description:
     "IGNOU BCA students ka apna internet gang. Assignments, backlogs aur bhaichara, sab ek jagah.",
 };

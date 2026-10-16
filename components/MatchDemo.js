@@ -6,8 +6,8 @@ const steps = [
 ];
 
 const messages = [
-  { me: false, text: "Bhai 3rd sem mein DSA ne kitna rulaya tumhe? 💀" },
-  { me: true, text: "Linked list tak theek tha, trees ne hi maar diya 😭" },
+  { me: false, text: "Bhai 3rd sem mein DSA ne kitna rulaya tumhe?" },
+  { me: true, text: "Linked list tak theek tha, trees ne hi maar diya." },
   { me: false, text: "Assignment kab tak submit karna hai, pata hai?" },
   { me: true, text: "Hub mein deadline dekh le, reminder bhi laga diya ⏰" },
 ];
@@ -86,7 +86,7 @@ export default function MatchDemo() {
                 Message likho...
               </div>
               <div className="grid h-10 w-10 place-items-center rounded-full bg-[#f5b301] text-black">
-                ➤
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-6.8l9-1.7-9-1.7V3.5L22 12 3 20.5z" /></svg>
               </div>
             </div>
           </div>
